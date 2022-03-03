@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neonate/FirstPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -102,6 +103,15 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            TextButton(
+                child: const Text('open firstPage'),
+                onPressed: (){
+                  //导航到新路由
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return const FirstPage();
+                  }));
+                }
+            )
           ],
         ),
       ),

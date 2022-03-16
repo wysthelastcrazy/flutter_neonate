@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neonate/Echo.dart';
 
 class FirstPage extends StatefulWidget{
   const FirstPage({Key? key}) : super(key: key);
@@ -13,9 +14,7 @@ class _FirstPageState extends State<FirstPage>{
       appBar: AppBar(
         title: const Text('FirstPage'),
       ),
-      body: const Center(
-       child: Text('Hello FirstPage'),
-      ),
+      body: const Echo(text: "text"),
     );
   }
 

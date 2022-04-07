@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neonate/Echo.dart';
+import 'package:flutter_neonate/Tapbox.dart';
 
 class FirstPage extends StatefulWidget{
   const FirstPage({Key? key}) : super(key: key);
@@ -14,7 +15,15 @@ class _FirstPageState extends State<FirstPage>{
       appBar: AppBar(
         title: const Text('FirstPage'),
       ),
-      body: const Echo(text: "text"),
+      body: Center(
+        child: Column(
+          children: const [
+            TapboxA(),
+            ParentWidgetB(),
+            ParentWidgetC()
+          ],
+        ),
+      )
     );
   }
 

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neonate/Constants.dart';
 import 'package:flutter_neonate/FirstPage.dart';
+import 'package:flutter_neonate/NewRoute.dart';
+import 'package:flutter_neonate/TipRoute.dart';
+import 'package:flutter_neonate/widgets/Echo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +29,16 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: MRoute.HOME,
+
+      ///注册路由表
+      routes: {
+        MRoute.HOME:(context) => const MyHomePage(title: "Home Page"),
+        MRoute.NEW_PAGE: (context) => const NewRoute(),
+        MRoute.FIRST_PAGE: (context) => const FirstPage(),
+        MRoute.TIP_PAGE:(context) => TipRoute(text: ModalRoute.of(context)!.settings.arguments.toString()),
+        MRoute.TIP_PAGE_2:(context) => const TipRoute2()
+      },
     );
   }
 }
@@ -104,14 +117,29 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             TextButton(
-                child: const Text('open firstPage'),
-                onPressed: (){
+                child: const Echo(text: 'open firstPage'),
+                onPressed: () {
                   //导航到新路由
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return const FirstPage();
                   }));
-                }
-            )
+                }),
+            TextButton(
+                onPressed: () {
+                  /**
+                   * 导航到新路由
+                   * MaterialPageRoute继承自PageRoute类，
+                   * PageRoute类是一个抽象类，表示占有整个屏幕空间的一个模态路由页面，
+                   * 它还定义了路由构建及切换时过渡动画的相关接口及属性。
+                   * MaterialPageRoute是Material组件库提供的的组件，它可以针对不同平台，
+                   * 实现与平台页面切换动画风格一致的路由切换动画。
+                   */
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  //   return const NewRoute();
+                  // }));
+                  Navigator.pushNamed(context, MRoute.NEW_PAGE);
+                },
+                child: const Text("open new route"))
           ],
         ),
       ),

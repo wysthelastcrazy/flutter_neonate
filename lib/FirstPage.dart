@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neonate/Echo.dart';
-import 'package:flutter_neonate/Tapbox.dart';
+import 'package:flutter_neonate/widgets/Echo.dart';
+import 'package:flutter_neonate/widgets/Tapbox.dart';
 
 class FirstPage extends StatefulWidget{
   const FirstPage({Key? key}) : super(key: key);

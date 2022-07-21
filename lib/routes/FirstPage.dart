@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neonate/widgets/Echo.dart';
+import 'package:flutter_neonate/widgets/RandowWordsWidget.dart';
 import 'package:flutter_neonate/widgets/Tapbox.dart';
 
 class FirstPage extends StatefulWidget{
@@ -20,7 +21,8 @@ class _FirstPageState extends State<FirstPage>{
           children: const [
             TapboxA(),
             ParentWidgetB(),
-            ParentWidgetC()
+            ParentWidgetC(),
+            RandomWordsWidget()
           ],
         ),
       )

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neonate/Constants.dart';
-import 'package:flutter_neonate/TipRoute.dart';
+import 'package:flutter_neonate/routes/TipRoute.dart';
 
 class NewRoute extends StatelessWidget {
   const NewRoute({Key? key}) : super(key: key);

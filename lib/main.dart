@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neonate/Constants.dart';
-import 'package:flutter_neonate/FirstPage.dart';
-import 'package:flutter_neonate/NewRoute.dart';
-import 'package:flutter_neonate/TipRoute.dart';
+import 'package:flutter_neonate/routes/FirstPage.dart';
+import 'package:flutter_neonate/routes/NewRoute.dart';
+import 'package:flutter_neonate/routes/TipRoute.dart';
 import 'package:flutter_neonate/widgets/Echo.dart';
 
 void main() {
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         MRoute.HOME:(context) => const MyHomePage(title: "Home Page"),
         MRoute.NEW_PAGE: (context) => const NewRoute(),
         MRoute.FIRST_PAGE: (context) => const FirstPage(),
+        //带参数的路由表注册，在push是添加arguments参数即可
         MRoute.TIP_PAGE:(context) => TipRoute(text: ModalRoute.of(context)!.settings.arguments.toString()),
         MRoute.TIP_PAGE_2:(context) => const TipRoute2()
       },

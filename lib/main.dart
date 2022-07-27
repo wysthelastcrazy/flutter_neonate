@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_neonate/Constants.dart';
 import 'package:flutter_neonate/routes/FirstPage.dart';
 import 'package:flutter_neonate/routes/NewRoute.dart';
@@ -84,6 +87,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    Future<String> future = loadAsset();
+    future.then((value) => {
+      print("main1111: $value")
+    });
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -140,7 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   // }));
                   Navigator.pushNamed(context, MRoute.NEW_PAGE);
                 },
-                child: const Text("open new route"))
+                child: const Text("open new route")),
+            const Image(image: AssetImage("assets/images/default_avatar.png"))
           ],
         ),
       ),
@@ -150,5 +159,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  Future<String> loadAsset() async{
+    return await rootBundle.loadString("assets/json/config.json");
   }
 }

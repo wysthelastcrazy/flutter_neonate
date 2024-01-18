@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neonate/http/models/AlbumModel.dart';
+import 'package:flutter_neonate/http/screens/homePage.dart';
 
 import 'data/Album.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<StatefulWidget> createState() => _MyAppState();
+  State<StatefulWidget> createState() => _SocketAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -48,5 +49,18 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+  }
+}
+
+class _SocketAppState extends State<MyApp> {
+  static const title = 'WebSocket Demo';
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+        title: title,
+        home: MyHomePage(
+          title: title,
+        ));
   }
 }

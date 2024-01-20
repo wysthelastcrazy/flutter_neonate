@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neonate/http/models/AlbumModel.dart';
 import 'package:flutter_neonate/http/screens/homePage.dart';
 
 import 'data/Album.dart';
+import 'models/AlbumModel.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+///http测试页面
+class HttpApp extends StatefulWidget {
+  const HttpApp({super.key});
 
   @override
   State<StatefulWidget> createState() => _SocketAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+///使用http包获取数据
+class _HttpAppState extends State<HttpApp> {
   late Future<Album> futureAlbum;
 
   @override
@@ -52,7 +50,8 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class _SocketAppState extends State<MyApp> {
+///使用webSocket
+class _SocketAppState extends State<HttpApp> {
   static const title = 'WebSocket Demo';
 
   @override

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/widgets_news_detail.dart';
+
 class NewsDetailPage extends StatefulWidget {
   const NewsDetailPage({super.key});
 
@@ -82,11 +84,7 @@ class _TitleSection extends StatelessWidget {
           /**
            * 标题行中的最后两项是一个红色星形图标,和文字
            */
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          const Text('41'),
+          const FavoriteWidget()
         ],
       ),
     );

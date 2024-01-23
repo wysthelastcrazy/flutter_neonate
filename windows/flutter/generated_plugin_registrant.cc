@@ -10,5 +10,5 @@
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   WindowSizePluginRegisterWithRegistrar(
-          registry->GetRegistrarForPlugin("WindowSizePlugin"));
+      registry->GetRegistrarForPlugin("WindowSizePlugin"));
 }

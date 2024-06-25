@@ -1,6 +1,6 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neonate/state_simple/state_app.dart';
+import 'package:flutter_neonate/gesture_simple/app_gesture.dart';
 
 void main() {
   // setupWindow();
@@ -11,7 +11,9 @@ void main() {
   ///news
   // runApp(const NewsApp());
   ///state
-  runApp(const StateApp());
+  // runApp(const StateApp());
+  ///gesture
+  runApp(const GestureApp());
 }
 
 const double windowWidth = 400;
